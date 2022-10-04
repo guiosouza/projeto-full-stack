@@ -1,0 +1,17 @@
+{
+  "name": "projeto-full-stack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/guiosouza/projeto-full-stack.git",
+  "author": "guiosouza <guilhermedeoliveiradesouza@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

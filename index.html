@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API REST</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="nav-container">
+        <nav class="nav-main">
+            <h1>API REST</h1>
+            <div class="methods">
+                <a href="http://localhost:3000/empregados" target="_blank">Veja as requisições aqui</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="form-section" class="form-container">
+            <div class="card-form">
+                <!-- Card principal do form -->
+                <form action="http://localhost:3000/empregados" name="newEmployee" method="post" target="_blank">
+                    <div class="form-control">
+                        <label for="id">ID:</label> <!-- É bom ter label para futuros teste e semantica -->
+                        <input name="id" id="id" class="form-input" type="text" placeholder="ID">
+                        <!-- name para acessar pelo JS -->
+                    </div>
+                    <div class="form-control">
+                        <label for="nome">Nome:</label> <!-- É bom ter label para futuros teste e semantica -->
+                        <input name="nome" id="nome" class="form-input" type="text" placeholder="Nome">
+                    </div>
+                    <div class="form-control">
+                        <label for="funcao">Função:</label> <!-- É bom ter label para futuros teste e semantica -->
+                        <input name="funcao" id="funcao" class="form-input" type="text" placeholder="Função">
+                        <div class="error-message" data-error="number"></div>
+                    </div>
+                    <div class="form-control">
+                        <label for="salario">Salário:</label> <!-- É bom ter label para futuros teste e semantica -->
+                        <input name="salario" id="salario" class="form-input" type="text" placeholder="Salário">
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit" class="btn btn-left">Salvar</button>
+                        <button type="button" value="delete" class="btn btn-right" name="btnClear">Limpar</button>
+                        <button  type="button" class="btn btn-center">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="/index.js"></script>
+</body>
+
+</html>
