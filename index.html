@@ -30,7 +30,7 @@
                 <form action="http://localhost:3000/empregados" name="newEmployee" method="post" target="_blank">
                     <div class="form-control">
                         <label for="id">ID:</label> <!-- É bom ter label para futuros teste e semantica -->
-                        <input name="id" id="id" class="form-input" type="text" placeholder="ID">
+                        <input name="id" id="id" class="form-input" type="text" placeholder="ID" required>
                         <!-- name para acessar pelo JS -->
                     </div>
                     <div class="form-control">
@@ -47,9 +47,9 @@
                         <input name="salario" id="salario" class="form-input" type="text" placeholder="Salário">
                     </div>
                     <div class="btn-container">
-                        <button type="submit" class="btn btn-left">Salvar</button>
-                        <button type="button" value="delete" class="btn btn-right" name="btnClear">Limpar</button>
+                        <button type="submit" class="btn"  >Salvar</button>
                         <button  type="button" class="btn btn-center">Editar</button>
+                        <button type="button" class="btn" target="_blank" >Deletar</button>
                     </div>
                 </form>
             </div>
@@ -57,5 +57,4 @@
     </main>
     <script src="/index.js"></script>
 </body>
-
 </html>
