@@ -3,7 +3,7 @@ Projeto CRUD destinado ao aprendizado de requisições através de um API usando
 
 ## Resultado
 
-Página do projeto: 
+Página do projeto: https://guiosouza.github.io/projeto-full-stack/
 
 ## Objetivo
 
