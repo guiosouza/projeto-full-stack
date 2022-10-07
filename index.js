@@ -12,6 +12,7 @@ function Empregado(id, nome, funcao, salario) {
     this.salario = salario;
 }
 
+// VETOR TOTAL PARA PREENCHER
 const totalEmpregados = [];
 
 server.get("/empregados", (req, res) => {
@@ -27,10 +28,6 @@ server.post("/empregados", (req, res) => {
 
 
     const empregado = new Empregado(id, nome, funcao, salario)
-    // empregados.push(id);
-    // empregados.push(nome);
-    // empregados.push(funcao);
-    // empregados.push(salario); 
 
     totalEmpregados.push(empregado)
     return res.json(totalEmpregados);
@@ -39,11 +36,10 @@ server.post("/empregados", (req, res) => {
 // PUT
 server.put("/empregados/:index", (req, res) => {
     const { index } = req.params; // recupera o index com os dados
-    const { id } = req.body;
     const { nome } = req.body;
     const { funcao } = req.body;
     const { salario } = req.body;
-    empregado[index] = id;
+    totalEmpregados[index] = nome;
     //empregado[index] = nome;
     //empregado[index] = funcao;
     //empregado[index] = salario;
@@ -51,9 +47,18 @@ server.put("/empregados/:index", (req, res) => {
 });
 
 // DELETE
-server.post("/empregados/deletar/:index", (req, res) => {
-    const { index } = req.params; // recupera o index com os dados
-    totalEmpregados.splice(index, 1); // percorre o vetor até o index selecionado e deleta uma posição no array
+server.post("/empregados/deletar/:id", (req, res) => {
+
+    const { id } = req.params; // recupera o index com os dados
+    for (let i = 0; i < totalEmpregados.length; i++) {
+        if(totalEmpregados[i].id == id) {
+            totalEmpregados.splice(i, 1);
+            // console.log("Lista atualizada:");
+            // console.log(totalEmpregados);
+        }   
+    }
+
+    //totalEmpregados.splice(index, 1); // percorre o vetor até o index selecionado e deleta uma posição no array
     return res.send(totalEmpregados);
 });
 

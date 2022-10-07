@@ -49,12 +49,14 @@
                     <div class="btn-container">
                         <button type="submit" class="btn"  >Salvar</button>
                         <button  type="button" class="btn btn-center">Editar</button>
-                        <button type="button" class="btn" target="_blank" >Deletar</button>
                     </div>
+                </form>
+                <form action="http://localhost:3000/empregados/deletar/:id" method="post">
+                    <button type="submit" class="btn" target="_blank" >Deletar</button>
                 </form>
             </div>
         </section>
     </main>
-    <script type="module" src="/index.js"></script>
+    <script src="/index.js"></script>
 </body>
 </html>
