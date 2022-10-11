@@ -47,7 +47,7 @@ server.put("/empregados/:id", (req, res) => {
 });
 
 // DELETE por ID
-server.post("/empregados/deletar/:id", (req, res) => {
+server.delete("/empregados/deletar/:id", (req, res) => {
 
     const { id } = req.params; // recupera o index com os dados
     for (let i = 0; i < totalEmpregados.length; i++) {
