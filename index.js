@@ -33,32 +33,28 @@ server.post("/empregados", (req, res) => {
     return res.json(totalEmpregados);
 });
 
-// PUT
-server.put("/empregados/:index", (req, res) => {
-    const { index } = req.params; // recupera o index com os dados
+// PUT - Update por ID
+server.put("/empregados/:id", (req, res) => {
+    const { id } = req.params; // recupera o index com os dados
     const { nome } = req.body;
     const { funcao } = req.body;
     const { salario } = req.body;
-    totalEmpregados[index] = nome;
-    //empregado[index] = nome;
-    //empregado[index] = funcao;
-    //empregado[index] = salario;
+    totalEmpregados[id] = nome;
+    // totalEmpregados[index] = nome;
+    // totalEmpregados[index] = funcao;
+    // totalEmpregados[index] = salario;
     return res.json(totalEmpregados);
 });
 
-// DELETE
+// DELETE por ID
 server.post("/empregados/deletar/:id", (req, res) => {
 
     const { id } = req.params; // recupera o index com os dados
     for (let i = 0; i < totalEmpregados.length; i++) {
         if(totalEmpregados[i].id == id) {
             totalEmpregados.splice(i, 1);
-            // console.log("Lista atualizada:");
-            // console.log(totalEmpregados);
         }   
     }
-
-    //totalEmpregados.splice(index, 1); // percorre o vetor até o index selecionado e deleta uma posição no array
     return res.send(totalEmpregados);
 });
 
