@@ -40,9 +40,9 @@ server.put("/empregados/:id", (req, res) => {
     const { funcao } = req.body;
     const { salario } = req.body;
     totalEmpregados[id] = nome;
-    // totalEmpregados[index] = nome;
-    // totalEmpregados[index] = funcao;
-    // totalEmpregados[index] = salario;
+    totalEmpregados[id] = nome;
+    totalEmpregados[id] = funcao;
+    totalEmpregados[id] = salario;
     return res.json(totalEmpregados);
 });
 
